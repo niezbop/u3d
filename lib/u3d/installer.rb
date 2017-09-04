@@ -293,7 +293,7 @@ module U3d
 
     def editor_version
       require 'yaml'
-      yaml = YAML.load(File.read("#{@path}/ProjectSettings/ProjectVersion.txt"))
+      yaml = YAML.safe_load(File.read("#{@path}/ProjectSettings/ProjectVersion.txt"))
       yaml['m_EditorVersion']
     end
   end
@@ -338,7 +338,7 @@ module U3d
       'debconf',
       'npm',
       'libpq5' # missing from original list
-    ]
+    ].freeze
 
     def self.install_dependencies
       if `which dpkg` != ''
