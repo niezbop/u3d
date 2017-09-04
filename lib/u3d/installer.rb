@@ -201,6 +201,7 @@ module U3d
     end
 
     def install_sh(file, installation_path: nil)
+      LinuxDependencies.install_dependencies
       cmd = file.shellescape
 
       U3dCore::CommandExecutor.execute(command: "chmod a+x #{cmd}")
