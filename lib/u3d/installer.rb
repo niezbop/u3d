@@ -299,6 +299,7 @@ module U3d
   end
 
   class LinuxDependencies
+    # see https://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
     DEPENDENCIES = [
       'gconf-service',
       'lib32gcc1',
@@ -340,7 +341,7 @@ module U3d
       'libpq5' # missing from original list
     ].freeze
 
-    def self.install_dependencies
+    def self.install
       if `which dpkg` != ''
         prefix = 'apt-get -y install'
       elsif `which rpm` != ''
