@@ -51,6 +51,12 @@
         "start_message": "Error while loading shared libraries: %{message}",
         "type": "error"
       },
+      "error_building_player": {
+        "active": true,
+        "start_pattern": "(?<message>Error building Player.*)\\n",
+        "start_message": "%{message}",
+        "type": "error"
+      },
       "log": {
         "active": true,
         "start_pattern": "UnityEngine\\.Debug:Log(?:Format)?\\((?:String, )?Object(?:\\[\\])?\\)",
